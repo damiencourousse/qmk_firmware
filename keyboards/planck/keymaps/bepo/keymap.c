@@ -71,25 +71,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {KC_LCTL, KC_LGUI, _______, KC_LALT, LOWER , KC_SPC    , KC_SPC , RAISE, KC_RALT, _______, _______, RCTL_T(KC_ENT)}
 },
 
-/* FN layer,  mimic of the Pok3r fn keys
+/* FN layer,  inspired by the Pok3r fn keys
  *
  * THIS NOT STRICTLY SPEAKING A LAYER!
  *
- * TODO à compléter  TODO
  * ,-----------------------------------------------------------------------------------.
  * | $/#  |   F1 |   F2 |   F3 |   F4 |   F5 |   F6 |   F7 |   F8 |   F9 |  F10 |  DEL |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |-+FN+-|Ctrl-A|Ctrl-T|Ctrl-L|Ctrl-K|      |      |  ←   |  ↓   |  ↑   |  →   |      |
+ * |-+FN+-|Ctrl-A|Ctrl-T|Ctrl-L|Ctrl-K|      | Home |  ←   |  ↓   |  ↑   |  →   |PtScrn|
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |Ctrl-W|Ctrl-X|Ctrl-C|Ctrl-V|      |      |      | PgDn | PgUp |      |      |
+ * |      |Ctrl-W|Ctrl-X|Ctrl-C|Ctrl-V|      | End  |      | PgDn | PgUp |Insert|      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
- * */
+ */
 [_FN_LAYER] = {
   {BP_DLR , KC_F1     , KC_F2     , KC_F3     , KC_F4     , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_DEL },
-  {_______, LCTL(BP_A), LCTL(BP_T), LCTL(BP_L), LCTL(BP_K), _______, _______, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______},
-  {_______, LCTL(BP_W), LCTL(BP_X), LCTL(BP_C), LCTL(BP_V), _______, _______, _______, KC_PGDN, KC_PGUP, _______, _______},
+  {_______, LCTL(BP_A), LCTL(BP_T), LCTL(BP_L), LCTL(BP_K), _______, KC_HOME, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_PSCR},
+  {_______, LCTL(BP_W), LCTL(BP_X), LCTL(BP_C), LCTL(BP_V), _______, KC_END , _______, KC_PGDN, KC_PGUP, KC_INS , _______},
   {_______, _______   , _______   , _______   , _______   , _______, _______, _______, _______, _______, _______, _______}
 },
 
