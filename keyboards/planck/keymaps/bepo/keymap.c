@@ -39,6 +39,7 @@ enum planck_layers {
   _FN_LAYER,
   _LOWER,
   _RAISE,
+  _NUMERIC,
   _ADJUST
 };
 
@@ -46,35 +47,34 @@ enum planck_keycodes {
   BEPO = SAFE_RANGE,
   LOWER,
   RAISE,
+  NUMERIC,
   FN_KEY,
 };
 
-#define FN_TAB LT(_FN_LAYER, KC_TAB)
+#define LT_TAB  LT(_FN_LAYER, KC_TAB)
+#define LT_ESC  LT(_NUMERIC,  KC_ESC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* BÉPO
- * ,----------------------------------------------------------------------------------------.
- * | Tab  |   B  |   É  |   P  |   O  |   È  | ^ / !|   V  |   D  |   L  |   J  |   Z       |
- * |------+------+------+------+------+-------------+------+------+------+------+-----------|
- * |Esc/Fn|   A  |   U  |   I  |   E  | , / ;|   C  |   T  |   S  |   R  |   N  |   M       |
- * |------+------+------+------+------+------|------+------+------+------+------+-----------|
- * | Shift|   À  |   Y  |   X  | . / :|   K  |   K  |   M  |   ,  |   .  |   /  | RShift/W  |
- * |------+------+------+------+------+------+------+------+------+------+------+-----------|
- * |  Ctrl|  Win |      | Alt  |Lower |    Space    |Raise | Left | RAlt | Shift|RCtrl/Enter|
- * `----------------------------------------------------------------------------------------'
+ * ,-----------------------------------------------------------------------------------------.
+ * |Esc/Num|   B  |   É  |   P  |   O  |   È  | ^ / !|   V  |   D  |   L  |   J  |   Z       |
+ * |-------+------+------+------+------+-------------+------+------+------+------+-----------|
+ * |Tab/Fn |   A  |   U  |   I  |   E  | , / ;|   C  |   T  |   S  |   R  |   N  |   M       |
+ * |-------+------+------+------+------+------|------+------+------+------+------+-----------|
+ * | Shift |   À  |   Y  |   X  | . / :|   K  |   K  |   M  |   ,  |   .  |   /  | RShift/W  |
+ * |-------+------+------+------+------+------+------+------+------+------+------+-----------|
+ * |  Ctrl |  Win |      | Alt  |Lower |    Space    |Raise | Left | RAlt | Shift|RCtrl/Enter|
+ * `-----------------------------------------------------------------------------------------'
  */
 [_BEPO] = {
-  {KC_ESC , BP_B   , BP_ECUT, BP_P   , BP_O  , BP_E_GRAVE, BP_DCRC, BP_V , BP_D   , BP_L   , BP_J   , BP_Z}        ,
-  {FN_TAB , BP_A   , BP_U   , BP_I   , BP_E  , BP_COMMA  , BP_C   , BP_T , BP_S   , BP_R   , BP_N   , BP_M}        ,
+  {LT_ESC , BP_B   , BP_ECUT, BP_P   , BP_O  , BP_E_GRAVE, BP_DCRC, BP_V , BP_D   , BP_L   , BP_J   , BP_Z}        ,
+  {LT_TAB , BP_A   , BP_U   , BP_I   , BP_E  , BP_COMMA  , BP_C   , BP_T , BP_S   , BP_R   , BP_N   , BP_M}        ,
   {KC_LSFT, BP_AGRV, BP_Y   , BP_X   , BP_DOT, BP_K      , BP_APOS, BP_Q , BP_G   , BP_H   , BP_F   , RSFT_T(BP_W)},
   {KC_LCTL, KC_LGUI, _______, KC_LALT, LOWER , KC_SPC    , KC_SPC , RAISE, KC_RALT, _______, _______, RCTL_T(KC_ENT)}
 },
 
 /* FN layer,  inspired by the Pok3r fn keys
- *
- * THIS NOT STRICTLY SPEAKING A LAYER!
- *
  * ,-----------------------------------------------------------------------------------.
  * | $/#  |   F1 |   F2 |   F3 |   F4 |   F5 |   F6 |   F7 |   F8 |   F9 |  F10 |  DEL |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
@@ -128,13 +128,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {_______, _______, _______, _______, _______, _______, _______, _______, _______ , _______, _______, _______}
 },
 
-/*  TODO une layer NUMERIC ? */
+/* Numeric
+ * ,-----------------------------------------------------------------------------------.
+ * |      |      |      |      |      |      |      |  7   |  8   |  9   |  /   | Bksp |
+ * |------+------+------+------+------+-------------+------+------+------+------+------|
+ * |Tab/Fn|      |      |      |      |      |      |  4   |  5   |  6   |  *   | =    |
+ * |------+------+------+------+------+------|------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |  1   |  2   |  3   |  +   |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |             |  .   |  0   |  ,   |  -   |Enter |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_NUMERIC] = {
+  {_______, _______, _______, _______, _______, _______, _______, BP_7   , BP_8   , BP_9   , BP_SLSH, KC_BSPC},
+  {LT_TAB , _______, _______, _______, _______, _______, _______, BP_4   , BP_5   , BP_6   , BP_ASTR, KC_EQL },
+  {_______, _______, _______, _______, _______, _______, _______, BP_1   , BP_2   , BP_3   , BP_PLUS, _______},
+  {_______, _______, _______, _______, _______, _______, _______, _______, BP_0   , BP_COMM, BP_MINS, KC_ENT }
+},
 
 /* Adjust (Lower + Raise)
  * ,-----------------------------------------------------------------------------------.
  * |      | Reset| Debug|      |      |      |      |      |      |      |      |  Del |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |      |      |Aud on|Audoff|AGnorm|AGswap|BÉPO  |      |      |      |      |
+ * |      |      |      |Aud on|Audoff|AGnorm|AGswap| BÉPO |NUMERC|      |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |Voice-|Voice+|Mus on|Musoff|MIDIon|MIDIof|      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -142,18 +158,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] = {
-  {_______, RESET,   DEBUG,   _______, _______, _______, _______, TERM_ON, TERM_OFF,_______, _______, KC_DEL },
-  {_______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, BEPO   , _______ , _______, _______, _______},
-  {_______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______},
+  {_______, RESET  , DEBUG  , _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL },
+  {_______, _______, MU_MOD , AU_ON  , AU_OFF , AG_NORM, AG_SWAP, BEPO   , NUMERIC, _______, _______, _______},
+  {_______, MUV_DE , MUV_IN , MU_ON  , MU_OFF , MI_ON  , MI_OFF , _______, _______, _______, _______, _______},
   {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
 }
-
 
 };
 
 #ifdef AUDIO_ENABLE
 
-#define BEPO_SOUND \
+#define SOUND_BEPO \
     E__NOTE(_GS6 ),  \
     E__NOTE(_A6  ),  \
     E__NOTE(_GS6 ),  \
@@ -163,7 +178,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     S__NOTE(_REST),  \
     ED_NOTE(_A7  ),
 
-#define BEPO_GOODBYE_SOUND \
+#define SOUND_BEPO_GOODBYE \
     E__NOTE(_A6  ),  \
     E__NOTE(_GS6 ),  \
     E__NOTE(_A6  ),  \
@@ -173,9 +188,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     S__NOTE(_REST),  \
     ED_NOTE(_E6  ),
 
-  float bepo_song[][2]     = SONG(BEPO_SOUND);
-  float bepo_gb_song[][2]  = SONG(BEPO_GOODBYE_SOUND);
-#endif
+float bepo_song[][2]     = SONG(SOUND_BEPO);
+float bepo_gb_song[][2]  = SONG(SOUND_BEPO_GOODBYE);
+
+#define SOUND_NUMERIC \
+    E__NOTE(_A6  ),  \
+    S__NOTE(_REST),  \
+    E__NOTE(_E7  ),  \
+    S__NOTE(_REST),  \
+    E__NOTE(_FS7  ), \
+    S__NOTE(_REST),  \
+    E__NOTE(_DS7  ), \
+    S__NOTE(_REST),  \
+    E__NOTE(_E7  ),  \
+    S__NOTE(_REST),  \
+    E__NOTE(_A6  ),
+
+float bepo_numeric[][2]  = SONG(SOUND_NUMERIC);
+
+#endif  /* AUDIO_ENABLE */
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
@@ -209,11 +240,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    case FN_KEY:
+    case NUMERIC:
       if (record->event.pressed) {
-        layer_on(_FN_LAYER);
-      } else {
-        layer_off(_FN_LAYER);
+        print("mode just switched to NUMERIC\n");
+        set_single_persistent_default_layer(_NUMERIC);
+#if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
+        PLAY_SONG(bepo_numeric);
+#endif
       }
       return false;
       break;
