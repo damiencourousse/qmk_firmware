@@ -78,18 +78,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * | $/#  |   F1 |   F2 |   F3 |   F4 |   F5 |   F6 |   F7 |   F8 |   F9 |  F10 |  DEL |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |-+FN+-|Ctrl-A|Ctrl-T|Ctrl-L|Ctrl-K|      | Home |  ←   |  ↓   |  ↑   |  →   |PtScrn|
+ * |-+FN+-|Ctrl-A|Ctrl-T|Ctrl-L|Ctrl-S|      | Home |  ←   |  ↓   |  ↑   |  →   |PtScrn|
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |Ctrl-W|Ctrl-X|Ctrl-C|Ctrl-V|      | End  |      | PgDn | PgUp |Insert|      |
+ * |      |Ctrl-W|Ctrl-X|Ctrl-C|Ctrl-V|Ctrl-K| End  |      | PgDn | PgUp |Insert|      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_FN_LAYER] = {
-  {BP_DLR , KC_F1     , KC_F2     , KC_F3     , KC_F4     , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_DEL },
-  {_______, LCTL(BP_A), LCTL(BP_T), LCTL(BP_L), LCTL(BP_K), _______, KC_HOME, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_PSCR},
-  {_______, LCTL(BP_W), LCTL(BP_X), LCTL(BP_C), LCTL(BP_V), _______, KC_END , _______, KC_PGDN, KC_PGUP, KC_INS , _______},
-  {_______, _______   , _______   , _______   , _______   , _______, _______, _______, _______, _______, _______, _______}
+  {BP_DLR , KC_F1     , KC_F2     , KC_F3     , KC_F4     , KC_F5     , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_DEL },
+  {_______, LCTL(BP_A), LCTL(BP_T), LCTL(BP_L), LCTL(BP_S), _______   , KC_HOME, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_PSCR},
+  {_______, LCTL(BP_W), LCTL(BP_X), LCTL(BP_C), LCTL(BP_V), LCTL(BP_K), KC_END , _______, KC_PGDN, KC_PGUP, KC_INS , _______},
+  {_______, _______   , _______   , _______   , _______   , _______   , _______, _______, _______, _______, _______, _______}
 },
 
 /* Lower
