@@ -54,6 +54,9 @@ enum planck_keycodes {
 #define LT_TAB  LT(_FN_LAYER, KC_TAB)
 #define LT_ESC  LT(_NUMERIC,  KC_ESC)
 
+#define TAPPING_TERM 500  /* the default is 200ms, too short for me because
+                             pressing 'w' is often interpreted as 'shift'. */
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* BÉPO
