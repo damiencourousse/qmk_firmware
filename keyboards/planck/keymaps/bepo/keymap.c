@@ -106,8 +106,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BEPO] = {
   {LT_ESC , BP_B   , BP_ECUT, BP_P   , BP_O  , BP_E_GRAVE, BP_DCRC, BP_V , BP_D   , BP_L   , BP_J   , BP_Z}        ,
   {LT_TAB , BP_A   , BP_U   , BP_I   , BP_E  , BP_COMMA  , BP_C   , BP_T , BP_S   , BP_R   , BP_N   , BP_M}        ,
-  {KC_LSFT, BP_AGRV, BP_Y   , BP_X   , BP_DOT, BP_K      , BP_APOS, BP_Q , BP_G   , BP_H   , BP_F   , RSFT_T(BP_W)},
-  {KC_LCTL, KC_LGUI, _______, KC_LALT, LOWER , KC_SPC    , KC_SPC , RAISE, KC_RALT, _______, _______, RCTL_T(KC_ENT)}
+  {KC_LSFT, BP_AGRV, BP_Y   , BP_X   , BP_DOT, BP_K      , BP_APOS, BP_Q , BP_G   , BP_H   , BP_F   , BP_W},
+  {KC_LCTL, KC_LGUI, _______, KC_LALT, LOWER , KC_SPC    , KC_SPC , RAISE, KC_RALT, _______, KC_RSFT, RCTL_T(KC_ENT)}
 },
 
 /* FN layer,  inspired by the Pok3r fn keys
