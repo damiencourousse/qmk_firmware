@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ],
   ["Tab / Fn","A","U","I","E",", / ;","C","T","S","R","N","M"],
   ["Shift","À","Y","X",". / :","K","K","M",",",".","/","Shift / W"],
-  ["Ctrl","Win","Alt","App","Lower",{w:2},"","Raise","Bksp","RAlt","Shift","Ctrl / Enter"],
+  ["Ctrl","App","Win","Alt","Lower",{w:2},"","Raise","Bksp","RAlt","Shift","Ctrl / Enter"],
 
   [{y:0.5},"$/#","","","","","","","PgUp","↑","PgDn","PtScrn","DEL",
       { "x": 0.25, "f": 4, "w": 2, "d": true }, "FN layer"
@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {LT_ESC , BP_B   , BP_ECUT, BP_P   , BP_O  , BP_E_GRAVE, BP_DCRC, BP_V , BP_D   , BP_L   , BP_J   , BP_Z},
   {LT_TAB , BP_A   , BP_U   , BP_I   , BP_E  , BP_COMMA  , BP_C   , BP_T , BP_S   , BP_R   , BP_N   , BP_M},
   {KC_LSFT, BP_AGRV, BP_Y   , BP_X   , BP_DOT, BP_K      , BP_APOS, BP_Q , BP_G   , BP_H   , BP_F   , BP_W},
-  {KC_LCTL, KC_LGUI, KC_LALT, KC_APP , LOWER , KC_SPC    , KC_SPC , RAISE, KC_BSPC, KC_RALT, KC_RSFT, RCTL_T(KC_ENT)}
+  {KC_LCTL, KC_APP , KC_LGUI, KC_LALT, LOWER , KC_SPC    , KC_SPC , RAISE, KC_BSPC, KC_RALT, KC_RSFT, RCTL_T(KC_ENT)}
 
   /* [Note:AG_SWAP]
    * Bootmagic options allow for example to swap Alt and Gui keys.  quite
