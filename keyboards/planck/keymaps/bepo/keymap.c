@@ -212,16 +212,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #define SOUND_BEPO \
     E__NOTE(_GS6 ),  \
     E__NOTE(_A6  ),  \
-    E__NOTE(_GS6 ),  \
-    E__NOTE(_A6  ),  \
     S__NOTE(_REST),  \
     ED_NOTE(_E7  ),  \
     S__NOTE(_REST),  \
     ED_NOTE(_A7  ),
 
 #define SOUND_BEPO_GOODBYE \
-    E__NOTE(_A6  ),  \
-    E__NOTE(_GS6 ),  \
     E__NOTE(_A6  ),  \
     E__NOTE(_GS6 ),  \
     S__NOTE(_REST),  \
@@ -233,10 +229,6 @@ float bepo_song[][2]     = SONG(SOUND_BEPO);
 float bepo_gb_song[][2]  = SONG(SOUND_BEPO_GOODBYE);
 
 #define SOUND_NUMERIC \
-    E__NOTE(_A6  ),  \
-    S__NOTE(_REST),  \
-    E__NOTE(_E7  ),  \
-    S__NOTE(_REST),  \
     E__NOTE(_FS7  ), \
     S__NOTE(_REST),  \
     E__NOTE(_DS7  ), \
