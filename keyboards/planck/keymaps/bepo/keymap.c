@@ -108,9 +108,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {LT_TAB , BP_A   , BP_U   , BP_I   , BP_E  , BP_COMMA  , BP_C   , BP_T , BP_S   , BP_R   , BP_N   , BP_M}        ,
   {KC_LSFT, BP_AGRV, BP_Y   , BP_X   , BP_DOT, BP_K      , BP_APOS, BP_Q , BP_G   , BP_H   , BP_F   , BP_W},
   {KC_LCTL, KC_LGUI, KC_APP , KC_LALT, LOWER , KC_SPC    , KC_SPC , RAISE, KC_RALT, KC_RGUI, KC_RSFT, RCTL_T(KC_ENT)}
-  // KC_LGUI and KC_LALT seem to be inverted
-  //    KC_LGUI -> Alt
-  //    KC_LALT -> Super L
+
+  /* [Note:AG_SWAP]
+   * Bootmagic options allow for example to swap Alt and Gui keys.  quite
+   * disturbing!
+   */
 },
 
 /* FN layer,  inspired by the Pok3r fn keys
