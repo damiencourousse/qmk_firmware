@@ -83,8 +83,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [{y:0.5},"$/#","guill","«","»","(",")","@","+","-","/","*","Bksp",
       { "x": 0.25, "f": 4, "w": 2, "d": true }, "raise layer"
   ],
-  ["" , "mute" , "Vol-" , "Vol+" , ""      , ""    , "Home" , "PgUp"  , "↑" , "PgDn" , "=" , "%"],
-  ["" , ""     , ""     , ""     , ""      , ""    , "End"  , "←"     , "↓" , "→"    , ""  , ""] ,
+  ["" , ""     , ""     , "trema",  ""      , ""    , "Home" , "PgUp"  , "↑" , "PgDn" , "=" , "%"],
+  ["" , "mute" , "Vol-" , "Vol+" , ""      , ""    , "End"  , "←"     , "↓" , "→"    , ""  , ""] ,
   ["" , ""     , ""     , ""     , "Lower" , {w:2} , ""     , "Raise" , "←" , "↓"    , "→" , ""] ,
 
 
@@ -134,10 +134,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 },
 
 [_RAISE] = {
-  {BP_DLR , BP_DQOT, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN, BP_AT  , BP_PLUS, BP_MINUS, BP_SLSH, BP_ASTR, KC_BSPC},
-  {_______, KC_MUTE, KC_VOLD, KC_VOLU, _______, _______, KC_HOME, KC_PGUP, KC_UP   , KC_PGDN, BP_EQL , BP_PERC},
-  {_______, _______, _______, _______, _______, _______, KC_END , KC_LEFT, KC_DOWN , KC_RGHT, _______, _______},
-  {_______, _______, _______, _______, _______, _______, _______, _______, _______ , _______, _______, _______}
+  {BP_DLR , BP_DQOT, BP_LGIL, BP_RGIL,       BP_LPRN, BP_RPRN, BP_AT  , BP_PLUS, BP_MINUS, BP_SLSH, BP_ASTR, KC_BSPC},
+  {_______, _______, _______, BP_DEAD_TREMA, _______, _______, KC_HOME, KC_PGUP, KC_UP   , KC_PGDN, BP_EQL , BP_PERC},
+  {_______, KC_MUTE, KC_VOLD, KC_VOLU,       _______, _______, KC_END , KC_LEFT, KC_DOWN , KC_RGHT, _______, _______},
+  {_______, _______, _______, _______,       _______, _______, _______, _______, _______ , _______, _______, _______}
 },
 
 [_NUMERIC] = {
