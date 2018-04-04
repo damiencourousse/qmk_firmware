@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [{y:0.5},"#","1","2","3","4","5","6","7","8","9","0","Bksp",
       { "x": 0.25, "f": 4, "w": 2, "d": true }, "lower layer"
   ],
-  ["Del","F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","Ç"],
+  ["Alt tab","F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","Ç"],
   ["","F11","F12","","","","","","","","",""],
   ["","","","","Lower",{w:2},"","Raise","Next","Vol-","Vol+","Play"],
 
@@ -127,10 +127,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 },
 
 [_LOWER] = {
-  {KC_TILD, BP_1   , BP_2   , BP_3   , BP_4   , BP_5   , BP_6   , BP_7   , BP_8   , BP_9   , BP_0   , KC_BSPC},
-  {KC_DEL , KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , BP_CCED},
-  {_______, KC_F11 , KC_F12 , _______, _______, _______, _______, _______, _______, _______, _______, _______},
-  {_______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY}
+  {KC_TILD,      BP_1   , BP_2   , BP_3   , BP_4   , BP_5   , BP_6   , BP_7   , BP_8   , BP_9   , BP_0   , KC_BSPC},
+  {LALT(LT_TAB), KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , BP_CCED},
+  {_______,      KC_F11 , KC_F12 , _______, _______, _______, _______, _______, _______, _______, _______, _______},
+  {_______,      _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY}
 },
 
 [_RAISE] = {
