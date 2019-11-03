@@ -56,56 +56,6 @@ enum planck_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-#if 0 /* JSON data for the keyboard layout editor! http://www.keyboard-layout-editor.com */
-[
-
-  [{a:7},"Esc / Num","B","É","P","O","È","^ / !","V","D","L","J","Z",
-      { "x": 0.25, "f": 4, "w": 2, "d": true }, "BÉPO layer"
-  ],
-  ["Tab / Fn" , "A"   , "U"   , "I"   , "E"     , "     , / ;" , "C"     , "T"    , "S"    , "R"     , "N"             , "M"]         ,
-  ["Shift"    , "À"   , "Y"   , "X"   , ". / :" , "K"   , "K"  , "M"     , "      , "      , "."     , "/"             , "Shift / W"] ,
-  ["Ctrl"     , "App" , "Win" , "Alt" , "Lower" , {w:2} , ""   , "Raise" , "Bksp" , "RAlt" , "Shift" , "Ctrl / Enter"] ,
-
-  [{y:0.5},"$/#","","","","","","","PgUp","↑","PgDn","PtScrn","DEL",
-      { "x": 0.25, "f": 4, "w": 2, "d": true }, "FN layer"
-  ],
-  ["FN" , "Ctrl-A" , "Ctrl-T" , "Ctrl-L" , "Ctrl-S" , ""       , "Home" , "←"     , "↓" , "→" , "Ins" , "Del"] ,
-  [""   , "Ctrl-W" , "Ctrl-X" , "Ctrl-C" , "Ctrl-V" , "Ctrl-K" , "End"  , ""      , ""  , ""  , ""    , ""]    ,
-  [""   , ""       , ""       , ""       , "Lower"  , {w:2}    , ""     , "Raise" , ""  , ""  , ""    , ""]    ,
-
-  [{y:0.5},"#","1","2","3","4","5","6","7","8","9","0","Bksp",
-      { "x": 0.25, "f": 4, "w": 2, "d": true }, "lower layer"
-  ],
-  ["Alt tab","F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","Ç"],
-  ["","F11","F12","","","","","","","","",""],
-  ["","","","","Lower",{w:2},"","Raise","Next","Vol-","Vol+","Play"],
-
-  [{y:0.5},"$/#","guill","«","»","(",")","@","+","-","/","*","Bksp",
-      { "x": 0.25, "f": 4, "w": 2, "d": true }, "raise layer"
-  ],
-  ["" , ""     , ""     , "trema",  ""      , ""    , "Home" , "PgUp"  , "↑" , "PgDn" , "=" , "%"],
-  ["" , "mute" , "Vol-" , "Vol+" , ""      , ""    , "End"  , "←"     , "↓" , "→"    , ""  , ""] ,
-  ["" , ""     , ""     , ""     , "Lower" , {w:2} , ""     , "Raise" , "←" , "↓"    , "→" , ""] ,
-
-
-  [{y:0.5},"","","","","","","","7","8","9","/","Bksp",
-      { "x": 0.25, "f": 4, "w": 2, "d": true }, "numeric layer"
-  ],
-  ["" , ""     , ""     , ""  , ""     , ""    , "" , "4" , "5" , "6" , "*" , "="]      ,
-  ["" , "Home" , "PgUp" , "↑" , "PgDn" , ""    , "" , "1" , "2" , "3" , "+" , "Tab/Fn"] ,
-  ["" , "End"  , "←"    , "↓" , "→"    , {w:2} , "" , "0" , "." , "   , "   , "-"       , "Enter"] ,
-
-  [{y:0.5},"","Reset","Debug","","","","","","","","","",
-      { "x": 0.25, "f": 4, "w": 2, "d": true }, "adjust layer"
-  ],
-  ["","BÉPO","NUMERC","Audon","Audoff","","","","","","",""],
-  ["","Voice-","Voice+","Muson","Musoff","","","","","","",""],
-  ["","","","","",{w:2},"","","","","",""]
-
-]
-
-#endif
-
 [_BEPO] = {
   {LT_ESC , BP_B   , BP_ECUT, BP_P   , BP_O  , BP_E_GRAVE, BP_DCRC, BP_V , BP_D   , BP_L   , BP_J   , BP_Z},
   {LT_TAB , BP_A   , BP_U   , BP_I   , BP_E  , BP_COMMA  , BP_C   , BP_T , BP_S   , BP_R   , BP_N   , BP_M},
