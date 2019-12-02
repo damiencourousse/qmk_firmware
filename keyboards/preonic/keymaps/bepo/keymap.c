@@ -49,11 +49,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_FN_LAYER] = LAYOUT_preonic_grid(
-  BP_DLR      , KC_1      , KC_2      , KC_3      , KC_4      , KC_5      , KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_DEL , \
-  LSFT(BP_DLR), _______   , _______   , _______   , _______   , _______   , _______, KC_PGUP, KC_UP  , KC_PGDN, KC_PSCR, _______, \
-  _______     , LCTL(BP_A), LCTL(BP_T), LCTL(BP_L), LCTL(BP_S), _______   , KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_INS , _______, \
-  _______     , LCTL(BP_W), LCTL(BP_X), LCTL(BP_C), LCTL(BP_V), LCTL(BP_K), KC_END , _______, _______, _______, _______, _______, \
-  _______     , _______   , _______   , _______   , LOWER     , KC_SPC    , KC_SPC , RAISE  , _______, _______, _______, _______ \
+  BP_DLR       , KC_1      , KC_2      , KC_3      , KC_4      , KC_5      , KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_DEL , \
+  LSFT(BP_DLR) , KC_SYSTEM_WAKE, KC_SYSTEM_SLEEP, _______   , _______   , _______   , _______, KC_PGUP, KC_UP  , KC_PGDN, KC_PSCR, _______, \
+  _______      , LCTL(BP_A), LCTL(BP_T), LCTL(BP_L), LCTL(BP_S), _______   , KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_INS , _______, \
+  _______      , LCTL(BP_W), LCTL(BP_X), LCTL(BP_C), LCTL(BP_V), LCTL(BP_K), KC_END , _______, _______, _______, _______, _______, \
+  _______      , _______   , _______   , _______   , LOWER     , KC_SPC    , KC_SPC , RAISE  , _______, _______, _______, _______ \
 ),
 
 [_LOWER] = LAYOUT_preonic_grid( \
