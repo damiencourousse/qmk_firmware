@@ -4,16 +4,34 @@
 #+KEYWORDS:
 #+LANGUAGE:  fr
 #+LaTeX_CLASS: default
-#+LaTeX_CLASS_OPTIONS: [landscape, 12pt]
+#+LaTeX_CLASS_OPTIONS: [10pt]
 
 #+TITLE: Planck keyboard - BÉPO layout(s)
 
-Notation between parenthesis indicate the code used when the key is
+* Build instructions
+
+Build:
+
+ #+begin_example
+ $ cd qmk_firmware
+ $ make preonic/rev3:bepo
+ #+end_example
+
+Flash:
+
+ #+begin_example
+ # put the keyboard in reset mode.
+ $ make preonic/rev3:bepo:dfu-util
+ #+end_example
+
+* Keyboard layout
+
+Notations between parenthesis indicate the code used when the key is
 kept low.  Example: (R CTLR).
 
-Notation in *bold face* indicate layer modifiers.  Example: *NUM*
+Notations in *bold face* indicate layer modifiers.  Example: *NUM*
 
-*** BEPO layer
+** BEPO layer
 
 #+attr_latex: :align |c|c|c|c|c|c|c|c|c|c|c|c|
 |---------+-----+------+------+---------+-------+-------+---------+------+------+---------+----------|
@@ -30,7 +48,7 @@ Notation in *bold face* indicate layer modifiers.  Example: *NUM*
 |         |     |      |      |         |       |       |         |      |      |         | (R CTRL) |
 |---------+-----+------+------+---------+-------+-------+---------+------+------+---------+----------|
 
-*** FN layer
+** FN layer
 
 #+attr_latex: :align |c|c|c|c|c|c|c|c|c|c|c|c|
 |-----+--------+--------+--------+--------+--------+-------+-------+---+-------+--------+-----|
@@ -44,7 +62,7 @@ Notation in *bold face* indicate layer modifiers.  Example: *NUM*
 |-----+--------+--------+--------+--------+--------+-------+-------+---+-------+--------+-----|
 #+TBLFM: $7=SPC= >
 
-*** LOWER layer
+** LOWER layer
 
 #+attr_latex: :align |c|c|c|c|c|c|c|c|c|c|c|c|
 |-----+-----+-----+----+---------+-------+-------+---------+------+------+------+------|
@@ -57,7 +75,7 @@ Notation in *bold face* indicate layer modifiers.  Example: *NUM*
 | ←   | ↓   | ↑   | →  | *LOWER* | < SPC | SPC > | *RAISE* | Next | Vol- | Vol+ | Play |
 |-----+-----+-----+----+---------+-------+-------+---------+------+------+------+------|
 
-*** RAISE layer
+** RAISE layer
 
 #+attr_latex: :align |c|c|c|c|c|c|c|c|c|c|c|c|
 |-----+------+------+---------+---------+-------+-------+---------+---+------+---+------|
@@ -70,7 +88,7 @@ Notation in *bold face* indicate layer modifiers.  Example: *NUM*
 |     |      |      |         | *LOWER* | < SPC | SPC > | *RAISE* |   |      |   |      |
 |-----+------+------+---------+---------+-------+-------+---------+---+------+---+------|
 
-*** NUMERIC (NUM) layer
+** NUMERIC (NUM) layer
 
 #+attr_latex: :align |c|c|c|c|c|c|c|c|c|c|c|c|
 |---+------+------+---------+---------+-------+-------+---+---+---+---+--------|
@@ -84,7 +102,7 @@ Notation in *bold face* indicate layer modifiers.  Example: *NUM*
 |   |      |      | *RAISE* | *LOWER* | < SPC | SPC > | 0 | . | , | - | ENTER  |
 |---+------+------+---------+---------+-------+-------+---+---+---+---+--------|
 
-*** ADJUST layer
+** ADJUST layer
 
 The *ADJUST* layer is reached by pressing both *LOWER* and *RAISE*.
 
